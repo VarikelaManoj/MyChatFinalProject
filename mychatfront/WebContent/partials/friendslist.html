@@ -1,0 +1,27 @@
+<style>
+.online{
+float: right;
+margin-top:1%;
+height:15px;
+width:15px;
+background-color:#0EE700;
+border-radius:500px;	
+}
+</style>
+<div class="modal-body">
+	<table class="table table-striped">
+		
+		<tbody>
+			<tr ng-repeat=" user in friendslist">
+				<td>{{user.friend_Name}}</td>
+				<td>{{user.isOnline}}</td>
+				<td class="online" ng-style="{'background-color':user.isOnline=='online'? '#0EE700' : 'red'}"></td>
+				
+				<td><img src="images/{{user.friend_Name}}.jpg" alt="me" style="width:150px;height:150px;border-radius: 50%;">
+			</td>
+			<td><li><a href="#chat">Chat</a></li></td>
+		
+			</tr>
+		</tbody>
+	</table>
+				</div>

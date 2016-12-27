@@ -1,0 +1,100 @@
+
+<div>
+<style>
+body{
+    background-image: url("http://cdn.wallpapersafari.com/5/20/7NVLhA.jpg");
+background-repeat: no-repeat;
+     background-attachment: fixed;
+}
+</style>
+	<hr>
+	<h2>All Blogs</h2>
+	<span class="clearfix"></span>
+	</hr>
+	<hr>
+	</hr>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+		 <th>blog_Id</th>
+        <th>blog_Name</th>
+        <th>blog_Description</th>
+          <th>blog_Category</th>
+		 <th>PostedBy</th>
+		<th>Like</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="userBlogs in blogs">
+      <td>{{userBlogs.blog_Id}}</td>
+        <td>{{userBlogs.blog_Name}}</td>
+        <td>{{userBlogs.blog_Description}}</td>
+        <td>{{userBlogs.blog_Category}}</td>
+        <td>{{userBlogs.postedBy}}</td>
+        <td>{{userBlogs.likes}}</td>
+			 <td><button type="button" class="btn btn-primary btn-sm "   ng-click="likeBlog(userBlogs)">Like</button></td>
+		 <td><button type="button" class="btn btn-primary btn-sm " data-toggle="modal" data-target="#commentblog"  ng-click="blogComment(userBlogs)">Comment</button></td>	
+			<td><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#commentslist" ng-click="commentslist(userBlogs)">view comments</button></td> 	
+				
+				</tr>
+				
+					</tbody>
+	</table>
+	 <div class="modal fade" id="commentblog" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">COMMENT</h4>
+        </div>
+        <div class="modal-body">
+        <form>
+        <h1>Comment:<input type="text" name="comment" ng-model="comment"><br>
+        <center><button type="submit"  class="btn btn-success" ng-click="addComment()">Submit</button></center>
+        </form>
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+ 
+  <!-- Modal -->
+	<div class="modal fade" id="commentslist" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">ALL COMMENTS</h4>
+				</div>
+				<div class="modal-body">
+				<table class="table table-striped">
+		<thead>
+			<tr>
+				
+				<th>Comment</th>
+				<th>GivenBy</th>
+				</tr>
+				</thead>
+			<tbody>
+			<tr ng-repeat=" comments in commentlist">
+			    <td>{{comments.comment}}</td>
+				<td>{{comments.username}}</td>
+			
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	</div>
+	<div class="modal-footer"> <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+	</div></div>
+	</div>
+	
+</div>

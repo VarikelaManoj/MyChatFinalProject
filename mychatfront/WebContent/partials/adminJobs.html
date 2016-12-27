@@ -1,0 +1,55 @@
+<div>
+	<hr>
+	
+	<h2>All Jobs</h2>
+	<span class="clearfix"></span>
+	</hr>
+	<hr>
+	</hr>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>JobId</th>
+				<th>JobName</th>
+				<th>JobDescription</th>
+				<th>JobLocation</th>
+				<th>Apply</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+			 <tr ng-repeat="job in jobs">
+      <td>{{job.jobId}}</td>
+        <td>{{job.jobsName}}</td>
+        <td>{{job.jobsDescription}}</td>
+        <td>{{job.jobsLocation}}</td>
+				<td><button type="button" class="btn btn-primary btn-sm "
+						data-toggle="modal" data-target="#applyjob"
+						ng-click="applyJob">Apply</button></td>
+				
+			</tr>
+		</tbody>
+	</table>
+	
+	<!-- Modal -->
+	<div class="modal fade" id="applyjob" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Apply</h4>
+				</div>
+				<div class="modal-body">Do you want to apply
+					{{job.jobId}} job?</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn-btn-default" data-dismiss="modal"
+					ng-click="applyJob(job)">Yes</button>
+				<button type="button" class="btn-btn-default" data-dismiss="modal">No</button>
+			</div>
+		</div>
+	</div>
+
+</div>

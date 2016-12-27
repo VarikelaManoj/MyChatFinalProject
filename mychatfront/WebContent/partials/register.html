@@ -1,0 +1,42 @@
+<div>
+<meta charset="utf-8">
+      <link rel="stylesheet" href="css/style.css"></link>
+<style>
+body{
+ background-image: url("http://previews.123rf.com/images/mazirama/mazirama1601/mazirama160100447/51445814-Register-here-hand-pressing-button-on-interface-with-blue-background--Stock-Photo.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    
+
+}
+
+</style>
+<div class="pen-title">
+</div>
+
+<div class="module form-module">
+  <div class="toggle">
+  </div>
+  <div class="form">
+    <h2>Register Here</h2>
+        <form name="myForm" >
+      <input type="text" placeholder="username" name="username" ng-model="username" required/>
+      <span ng-show="myForm.username.$error.required">The username is required.</span>
+  	  <input type="password" placeholder="password" name="password" ng-model="password" required/>
+  	  <span ng-show="myForm.password.$error.required">The password is required.</span>
+      <input type="text" placeholder="DOB" name="dob" ng-model="dob" required/>
+      <span ng-show="myForm.dob.$error.required">The Dob is required.</span>
+      <input type="text" placeholder="mobileno" name="mobileno" ng-model="mobileno" required/>
+      <span ng-show="myForm.mobileno.$error.required">The mobileno is required.</span>
+       <input type = "file" placeholder="uploadfile" file-model = "myFile"/><br><br>
+      <button type="submit" ng-disabled="myForm.$invalid" ng-click="register()">Register</button>
+    </form>
+  </div>
+        <!-- <button type="submit"  ng-click="reload()">Another Registration</button> -->
+  
+</div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+
+</div>
